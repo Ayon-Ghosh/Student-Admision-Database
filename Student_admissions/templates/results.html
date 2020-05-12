@@ -1,0 +1,71 @@
+{% block content %}
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" type = "text/css" href = "{{url_for('static', filename = 'css/main.css')}}">
+		<title>Calculator</title>
+
+</head>
+<body>
+	<header class="site-header">
+
+	  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+	    <div class="container">
+	      <a class="navbar-brand mr-4" href="/">Student List </a>
+			<a class="navbar-brand mr-4" href="/">Go back to Search Query</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="navbar-toggler-icon"></span>
+	      </button>
+
+	    </div>
+	  </nav>
+	</header>
+
+</body>
+<div class = "content-section">
+	<form method = "POST" action ="/result">
+
+	<body>
+
+ <article class="media content-section">
+	  <div class="media-body">
+      <table cellspacing="0">
+	  <th >Result list</th>
+      <tr>
+         <th width="50">_id</th>
+         <th width="50">Serial_No</th>
+         <th width="50">GRE_Score</th>
+         <th width="50">TOEFL_SCore</th>
+         <th width="50">SOP</th>
+         <th width="50">LOR</th>
+         <th width="50">CGPA</th>
+         <th width="50">Research</th>
+         <th width="50">Chance_of_Admit</th>
+
+      </tr>
+        {% for result in results %}
+        <tr>
+              <td>{{result['_id']}}</td>
+              <td>{{result['Serial No']}}</td>
+              <td>{{result['GRE Score']}}</td>
+		      <td>{{result['TOEFL SCore']}}</td>
+              <td>{{result['SOP']}} </td>
+		      <td>{{result['LOR']}} </td>
+		      <td>{{result['CGPA']}} </td>
+		      <td>{{result['Research']}} </td>
+		      <td>{{result['Chance of Admit']}} </td>
+		</tr>
+        {% endfor %}
+   </table>
+</div>
+
+
+
+</body>
+
+
+{% endblock content %}

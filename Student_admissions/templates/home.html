@@ -1,0 +1,51 @@
+{% extends 'layout.html'%}
+{% block content %}
+<div class = "content-section">
+
+		<div class="container">
+               <h3>Enter Query</h3>
+        </div>
+
+    <!-- Form -->
+        <div class="form">
+			<form action="/result" method="POST">
+                  <label for="Serial No">Serial No</label>
+                  <input type="text" placeholder="Serial No"  name="Serial No"/>
+
+                  <label for="GRE Score">GRE Score</label>
+                  <input type="text" placeholder="GRE Score" name="GRE Score"/>
+
+                  <label for="TOEFL SCore">TOEFL SCore</label>
+                  <input type="text" placeholder="TOEFL SCore" name="TOEFL SCore"/>
+
+                  <label for="SOP">SOP</label>
+                  <input type="text" placeholder="SOP" name="SOP"/>
+
+                  <label for="LOR">LOR</label>
+                  <input type="text" placeholder="LOR" class="u-full-width"  name="LOR"/>
+
+                  <label for="CGPA">CGPA</label>
+                  <input type="text" placeholder="CGPA" class="u-full-width"  name="CGPA"/>
+
+                  <label for="Research">Research</label>
+                  <input type="text" placeholder="Research" class="u-full-width"  name="Research"/>
+
+                  <label for="Chance of Admit">Chance of Admit</label>
+                  <input type="text" placeholder="Chance of Admit" class="u-full-width"  name="Chance of Admit"/>
+
+
+
+                  <label for="Operation">Operation</label>
+                  <select id="operation" name="operation">
+                        <option value="Add">Add</option>
+                        <option value="Search">Search</option>
+                        <option value="View List">View List</option>
+                  </select>
+
+                <input type="submit" value="Submit">
+              <br />
+
+            </form>
+    </div>
+</div>
+{% endblock content %}
